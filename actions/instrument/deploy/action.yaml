@@ -24,7 +24,7 @@ runs:
       shell: bash
       run: |
         (ls "${{ inputs.workflows_directory }}"/*.yaml "${{ inputs.workflows_directory }}"/*.yml 2> /dev/null || true) | while read -r workflow_file; do
-          sed -i 's~plengauer/opentelemetry-github~${{ inputs.action_repository }}~g' "$workflow_file"
+          sed -i 's~PatMis16/Thoth~${{ inputs.action_repository }}~g' "$workflow_file"
           sed -i 's~plengauer/opentelemetry-bash~${{ inputs.action_repository }}~g' "$workflow_file"
           sed -i 's~plengauer/opentelemetry-shell~${{ inputs.action_repository }}~g' "$workflow_file"
           sed -i 's~plengauer/opentelemetry-thoth~${{ inputs.action_repository }}~g' "$workflow_file"
@@ -192,7 +192,7 @@ inputs:
     description: 'Whether to (1) redact no secrets at all, to (2) list them explicitly based on content of the workflow, or to (3) proactively redact all secrets (one of "none", "list", "all").'
     default: 'all'
   action_repository:
-    default: plengauer/opentelemetry-github
+    default: PatMis16/Thoth
   action_version:
     default: v5.16.0
   dry_run:
